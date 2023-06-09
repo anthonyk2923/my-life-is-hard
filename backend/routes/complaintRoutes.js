@@ -6,6 +6,7 @@ router
   .route('/')
   .get(complaintController.getComplaints)
   .post(complaintController.createComplaint);
+//  .delete(complaintController.deleteAllComplaints);
 router
   .route('/:id')
   .put(complaintController.updateComplaint)

@@ -1,6 +1,10 @@
 const asyncHandler = require('express-async-handler');
 const Complaint = require('../models/complaintModel');
 
+const deleteAllComplaints = asyncHandler(async (req, res) => {
+  await Complaint.deleteMany({});
+  res.status(200).json('deleted');
+});
 const getComplaints = asyncHandler(async (req, res) => {
   const complaints = await Complaint.find();
   res.status(200).json(complaints);
@@ -45,4 +49,5 @@ module.exports = {
   createComplaint,
   updateComplaint,
   deleteComplaint,
+  deleteAllComplaints,
 };
