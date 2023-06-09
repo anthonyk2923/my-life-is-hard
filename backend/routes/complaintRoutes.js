@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const complaintController = require('../controllers/complaintController');
 
-router.get('/', complaintController.getComplaints);
-router.post('/', complaintController.createComplaint);
-router.put('/:id', complaintController.updateComplaint);
-router.delete('/:id', complaintController.deleteComplaint);
+router
+  .route('/')
+  .get(complaintController.getComplaints)
+  .post(complaintController.createComplaint);
+router
+  .route('/:id')
+  .put(complaintController.updateComplaint)
+  .delete(complaintController.deleteComplaint);
 
 module.exports = router;
