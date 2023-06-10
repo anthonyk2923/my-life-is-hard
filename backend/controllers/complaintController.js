@@ -10,7 +10,7 @@ const getComplaints = asyncHandler(async (req, res) => {
   res.status(200).json(complaints);
 });
 const createComplaint = asyncHandler(async (req, res) => {
-  if (!req.body.title && !req.body.body) {
+  if (!req.body.title || !req.body.body) {
     res.status(400);
     throw new Error('Please ensure that you have added a title and body field');
   }
