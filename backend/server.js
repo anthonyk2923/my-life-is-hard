@@ -1,7 +1,6 @@
 console.clear();
 const express = require('express');
 const dotenv = require('dotenv').config();
-const port = process.env.PORT;
 const errorMiddleware = require('./middleware/errorMiddleware');
 const colors = require('colors');
 const connectDB = require('./config/db');
@@ -32,6 +31,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/complaints', require('./routes/complaintRoutes'));
 app.use(errorMiddleware.errorHandler);
 
-app.listen(port, () => {
-  console.log(`server started on port ${port}`.bold.dim);
+app.listen(process.env.PORT, () => {
+  console.log(`server started on port ${process.env.PORT}`.bold.dim);
 });
