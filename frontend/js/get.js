@@ -19,6 +19,12 @@ function getComplaints() {
 }
 const handler = async () => {
   await getComplaints();
+
+  const stringifed = JSON.stringify(allComplaints);
+  console.log(stringifed.length);
+  if (stringifed.length != 2) {
+    document.getElementById('cards-parent-container').innerHTML = '';
+  }
   for (const i of allComplaints) {
     document.getElementById('cards-parent-container').innerHTML += `
     <div class="col">
@@ -45,5 +51,13 @@ const handler = async () => {
     </div>
   </div>`;
   }
+  console.log(document.getElementById('cards-parent-container').innerHTML);
+  if (
+    document.getElementById('cards-parent-container').innerHTML == 'loading...'
+  ) {
+    document.getElementById('empty').innerHTML = '<h1> 🙁 No Posts Yet 🙁<h1>';
+    document.getElementById('cards-parent-container').innerHTML = '';
+  }
 };
+
 handler();
