@@ -35,3 +35,4 @@ app.use(errorMiddleware.errorHandler);
 app.listen(port, () => {
   console.log(`server started on port ${port}`.bold.dim);
 });
+export default app;
