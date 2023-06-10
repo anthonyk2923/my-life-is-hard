@@ -1,5 +1,5 @@
 async function postComplaints() {
-  fetch('http://localhost:8080/api/complaints', {
+  fetch('https://my-life-is-hard.herokuapp.com/api/complaints', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({

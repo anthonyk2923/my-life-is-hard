@@ -12,7 +12,7 @@ let allComplaints = null;
 // }
 
 function getComplaints() {
-  return fetch('http://localhost:8080/api/complaints')
+  return fetch('https://my-life-is-hard.herokuapp.com/api/complaints')
     .then((res) => res.json())
     .then((res) => (allComplaints = res))
     .catch((err) => console.log(err));
