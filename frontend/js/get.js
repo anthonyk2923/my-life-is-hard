@@ -25,7 +25,7 @@ const handler = async () => {
   if (stringifed.length != 2) {
     document.getElementById('cards-parent-container').innerHTML = '';
   }
-  for (const i of allComplaints) {
+  for (const i of allComplaints.reverse()) {
     document.getElementById('cards-parent-container').innerHTML += `
     <div class="col">
     <div class="card h-100">
