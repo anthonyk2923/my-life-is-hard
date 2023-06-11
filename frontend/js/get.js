@@ -21,7 +21,7 @@ const handler = async () => {
   await getComplaints();
 
   const stringifed = JSON.stringify(allComplaints);
-  console.log(stringifed.length);
+  // console.log(stringifed.length);
   if (stringifed.length != 2) {
     document.getElementById('cards-parent-container').innerHTML = '';
   }
@@ -51,7 +51,7 @@ const handler = async () => {
     </div>
   </div>`;
   }
-  console.log(document.getElementById('cards-parent-container').innerHTML);
+  // console.log(document.getElementById('cards-parent-container').innerHTML);
   if (
     document.getElementById('cards-parent-container').innerHTML == 'loading...'
   ) {

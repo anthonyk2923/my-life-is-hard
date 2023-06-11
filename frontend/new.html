@@ -24,13 +24,13 @@
     <div class="d-flex align-items-center" id="containeri" style="min-height: 80vh">
       <div class="d-grid gap-3 col-5 mx-auto p-3  " >
           <button class="btn btn-dark mb-3" type="button" onClick="window.location.href='./index.html'">👈 Return to Home Page 👈</button>
-          <form class="shadow-sm p-3 mb-5 bg-body-tertiary rounded" action="./index.html" onsubmit="sendData()" >
+          <form class="shadow-sm p-3 mb-5 bg-body-tertiary rounded" id="form" >
                   <div class="mb-3">
-                  <label class="form-label">Title:</label>
+                  <label for="title"class="form-label">Title:</label>
                   <input type="text" class="form-control" id="title" required>
                 </div>
                 <div class="mb-3">
-                  <label  class="form-label">Body:</label>
+                  <label for="body"class="form-label">Body:</label>
                   <textarea class="form-control" id="body" rows="5" required></textarea>
                 </div>
                 <div align=center class="col-12">
