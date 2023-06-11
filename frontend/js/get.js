@@ -2,15 +2,6 @@
 //@GET /API/COMPLAINTS
 let allComplaints = null;
 
-// class complaint {
-//   constructor(id, createdAt, title, body) {
-//     this.id = id;
-//     this.createdAt = createdAt;
-//     this.title = title;
-//     this.body = body;
-//   }
-// }
-
 function getComplaints() {
   return fetch('https://my-life-is-hard.herokuapp.com/api/complaints')
     .then((res) => res.json())
