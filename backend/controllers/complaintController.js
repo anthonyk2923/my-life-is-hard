@@ -36,23 +36,13 @@ const updateComplaint = asyncHandler(async (req, res) => {
   res.status(200).json(updateComplaint);
 });
 const deleteComplaint = asyncHandler(async (req, res) => {
-  if (
-    req.body.secret == process.env.SECRET &&
-    process.env.NODE_END == 'development'
-  ) {
-    complaint = await Complaint.findById(req.params.id);
-    if (!complaint) {
-      res.status(200);
-      throw new Error('Complaint not found');
-    }
-    await Complaint.deleteOne(complaint);
-    res.status(200).json(req.params.id);
-  } else {
-    res.status(401);
-    throw new Error(
-      'You are not authorized to access this method, nice try ;)'
-    );
+  complaint = await Complaint.findById(req.params.id);
+  if (!complaint) {
+    res.status(200);
+    throw new Error('Complaint not found');
   }
+  await Complaint.deleteOne(complaint);
+  res.status(200).json(req.params.id);
 });
 module.exports = {
   getComplaints,

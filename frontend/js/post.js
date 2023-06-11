@@ -4,7 +4,7 @@ document.getElementById('form').addEventListener('submit', async (e) => {
   e.preventDefault();
   userTitle = document.getElementById('title').value;
   userBody = document.getElementById('body').value;
-  await fetch('https://my-life-is-hard.herokuapp.com/api/complaints/', {
+  await fetch('https://my-life-is-hard.herokuapp.com/api/complaints', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
