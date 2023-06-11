@@ -14,3 +14,4 @@ document.getElementById('form').addEventListener('submit', async (e) => {
   }).catch((err) => console.log(err));
   window.location.href = './index.html';
 });
+//
